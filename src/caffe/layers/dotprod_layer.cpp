@@ -83,7 +83,7 @@ void DotProdLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
 }
 
 #ifdef CPU_ONLY
-//STUB_GPU(DotProdLayer);
+STUB_GPU(DotProdLayer);
 #endif
 
 INSTANTIATE_CLASS(DotProdLayer);
