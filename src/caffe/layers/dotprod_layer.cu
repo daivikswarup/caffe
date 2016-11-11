@@ -10,8 +10,6 @@ namespace caffe {
 template <typename Dtype>
 void DotProdLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
     const vector<Blob<Dtype>*>& top) {
-
-    const vector<Blob<Dtype>*>& bottom, const vector<Blob<Dtype>*>& top) {
     const vector<int> blobshape = bottom[0]->shape();
     const int count = blobshape[2]*blobshape[3];//Number of pixels
     const int num_classes_batches = blobshape[0]*blobshape[1];
@@ -25,7 +23,6 @@ void DotProdLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
         bottom_data = bottom_data + count;
     }
   }
-}
 
 
 template <typename Dtype>
@@ -53,7 +50,6 @@ void DotProdLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
         bottom_data = bottom_data + count;
     }
   }
-}
 
 INSTANTIATE_LAYER_GPU_FUNCS(DotProdLayer);
 
